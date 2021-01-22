@@ -5,17 +5,20 @@
         </div>
         <pokedex-screen></pokedex-screen>
         <pokedex-search></pokedex-search>
+        <pokedex-controllers></pokedex-controllers>
     </div>
 </template>
 
 <script>
+import PokedexControllers from './PokedexControllers.vue'
 import PokedexScreen from './PokedexScreen.vue'
 import PokedexSearch from './PokedexSearch.vue'
 export default {
     name: 'Pokedex',
     components: {
         PokedexScreen,
-        PokedexSearch
+        PokedexSearch,
+        PokedexControllers
     }
 }
 </script>

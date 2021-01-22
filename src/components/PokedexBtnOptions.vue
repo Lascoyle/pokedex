@@ -1,6 +1,6 @@
 <template>
-  <div>
-      
+  <div id="pokedex-btn-options">
+
   </div>
 </template>
 
