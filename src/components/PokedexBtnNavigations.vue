@@ -1,10 +1,12 @@
 <template>
   <div id="pokedex-btn-navigations">
       <button class="pokedex-btn-navigation up"></button>
+      <div class="btns-group">
+        <button class="pokedex-btn-navigation left"></button>
+        <div class="pokedex-btn-navigation center"></div>
+        <button class="pokedex-btn-navigation right"></button>
+      </div>
       <button class="pokedex-btn-navigation down"></button>
-      <div class="pokedex-btn-navigation center"></div>
-      <button class="pokedex-btn-navigation left"></button>
-      <button class="pokedex-btn-navigation right"></button>
   </div>
 </template>
 
@@ -16,7 +18,10 @@ export default {
 
 <style>
 #pokedex-btn-navigations {
-  width: 20%;
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .pokedex-btn-navigation {
@@ -25,6 +30,10 @@ export default {
   height: 30px;
   border: none;
   background-color:rgb(59, 58, 68);
+}
+
+.btns-group {
+  display: flex;
 }
 
 .up {
