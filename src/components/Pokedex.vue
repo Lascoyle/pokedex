@@ -1,11 +1,12 @@
 <template>
     <div id="pokedex">
         <div id="pokedex-title-container">
-            <h3 id="pokedex-title">This my Pokedex</h3>
+            <h3 id="pokedex-border"></h3>
         </div>
         <pokedex-screen></pokedex-screen>
         <pokedex-search></pokedex-search>
         <pokedex-controllers></pokedex-controllers>
+        <pokedex-speaker></pokedex-speaker>
     </div>
 </template>
 
@@ -13,12 +14,14 @@
 import PokedexControllers from './PokedexControllers.vue'
 import PokedexScreen from './PokedexScreen.vue'
 import PokedexSearch from './PokedexSearch.vue'
+import PokedexSpeaker from './PokedexSpeaker.vue'
 export default {
     name: 'Pokedex',
     components: {
         PokedexScreen,
         PokedexSearch,
-        PokedexControllers
+        PokedexControllers,
+        PokedexSpeaker
     }
 }
 </script>
@@ -44,10 +47,11 @@ export default {
         margin-bottom: 2%
     }
 
-    #pokedex-title {
+    #pokedex-border {
         margin-left: 5vw;
         margin-right: 5vw;
-        border-right: solid 2px  rgb(189, 57, 57);;
-        border-left: solid 2px  rgb(189, 57, 57);;
+        height: 20px;
+        border-right: solid 2px  rgb(189, 57, 57);
+        border-left: solid 2px  rgb(189, 57, 57);
     }
 </style>

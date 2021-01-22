@@ -3,7 +3,9 @@
       <button class="pokedex-btn-navigation up"></button>
       <div class="btns-group">
         <button class="pokedex-btn-navigation left"></button>
-        <div class="pokedex-btn-navigation center"></div>
+        <div class="pokedex-btn-navigation center">
+          <div class="center-rounded"></div>
+        </div>
         <button class="pokedex-btn-navigation right"></button>
       </div>
       <button class="pokedex-btn-navigation down"></button>
@@ -54,5 +56,14 @@ export default {
 .right {
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
+}
+
+.center-rounded {
+  background-color:rgb(100, 98, 114);
+  width: 80%;
+  height: 80%;
+  border-radius: 50px;
+  margin: 0 auto;
+  margin-top: 10%;
 }
 </style>
