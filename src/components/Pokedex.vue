@@ -15,6 +15,7 @@ import PokedexControllers from './PokedexControllers.vue'
 import PokedexScreen from './PokedexScreen.vue'
 import PokedexSearch from './PokedexSearch.vue'
 import PokedexSpeaker from './PokedexSpeaker.vue'
+
 export default {
     name: 'Pokedex',
     components: {
@@ -22,6 +23,9 @@ export default {
         PokedexSearch,
         PokedexControllers,
         PokedexSpeaker
+    },
+    data() {
+        return
     }
 }
 </script>
