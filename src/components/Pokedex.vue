@@ -36,7 +36,7 @@ export default {
     mounted() {
         axios
         .get('https://pokeapi.co/api/v2/pokemon/150')
-        .then(response =>(this.pokemon = response.data, this.sprite = response.data.sprites.front_default,console.log(this.pokemon, this.sprite)))
+        .then(response =>(this.pokemon = response.data, this.sprite = response.data.sprites.front_default))
     }
 }
 </script>

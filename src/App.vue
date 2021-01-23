@@ -34,4 +34,8 @@ body {
   box-sizing: border-box;
   font-size: 1.6rem;
 }
+
+ul {
+  list-style-type: none;
+}
 </style>
