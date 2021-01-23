@@ -23,11 +23,11 @@ export default {
 }
 
 .pokedex-btn-option {
-  width: 40px;
-  height: 10px;
+  width: 45px;
+  height: 15px;
   border-radius: 50px;
-  border: none;
   background: rgb(59, 58, 68);
   transform: rotate(-25deg);
+  border-color: gray;
 }
 </style>

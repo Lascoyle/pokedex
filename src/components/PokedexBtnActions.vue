@@ -14,23 +14,24 @@ export default {
 <style>
 #pokedex-btn-actions {
     display: flex;
-    justify-content: flex-end;
-    width: 35%;
+    justify-content: space-between;
+    width: 33%;
+    padding: 5px;
+    background-color: rgb(211, 63, 63);
+    transform: rotate(-20deg);
+    border-radius: 50px;
 }
 
 .pokedex-btn-action {
     display: block;
     width: 40px;
     height: 40px;
-    border: none;
+    border-color: gray;
     border-radius: 100px;
     background-color:rgb(59, 58, 68);
-    margin-left: 10px;
 }
 
-.cancel {
-    margin-top: 15px
-}
+
 
 
 </style>

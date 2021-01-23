@@ -20,18 +20,21 @@ export default {
 
 <style>
 #pokedex-btn-navigations {
-  width: 30%;
+  width: 31%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color:  rgb(211, 63, 63);
+  border-radius: 50px;
+  padding: 5px;
 }
 
 .pokedex-btn-navigation {
   display: block;
   width: 30px;
   height: 30px;
-  border: none;
   background-color:rgb(59, 58, 68);
+  border-color: gray;
 }
 
 .btns-group {
@@ -41,21 +44,25 @@ export default {
 .up {
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
+  border-bottom: none;
 }
 
 .down {
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
+  border-top: none;
 }
 
 .left {
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
+  border-right: none;
 }
 
 .right {
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
+  border-left: none;
 }
 
 .center-rounded {
