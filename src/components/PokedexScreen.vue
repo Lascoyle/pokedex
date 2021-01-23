@@ -22,6 +22,15 @@
                         </ul>
                     </div>
                 </div>
+                <div id="pokemon-stats">
+                    <h3 id="pokemon-stats-title">Statistics</h3>
+                    <ul id="pokemon-stats-list">
+                        <li class="pokemon-stat" v-for="(stat, index) in pokemon.stats" :key="index">
+                            <span class="pokemon-stat-label">{{ stat.stat.name }}:</span>
+                            <span class="pokemon-stat-value">{{ stat.base_stat }}</span>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
@@ -58,7 +67,6 @@ export default {
     width: 90vw;
     height: 50vh;
     font-family: 'pokemon', sans-serif;
-    color: rgb(0, 92, 0);
 }
 
 #pokedex-screen-frame {
@@ -77,6 +85,10 @@ export default {
     height: 80%;
     margin: auto;
     margin-top: 10px;
+    color: rgb(0, 92, 0);
+    overflow-y: scroll;
+    scrollbar-color: rebeccapurple green;
+    scrollbar-width: thin;
 }
 
 #pokemon-identity {
@@ -92,6 +104,7 @@ export default {
     display: flex;
     justify-content: space-around;
     align-items: center;
+    padding-bottom: 37px;
 }
 
 #pokemon-image {
@@ -109,5 +122,21 @@ export default {
 
 .pokemon-scale-item {
     font-size: 1rem;
+}
+
+#pokemon-stats {
+    font-size: 0.9rem;
+    background:  rgb(177, 199, 149);
+    border : solid 2px rgb(0, 92, 0);
+}
+
+#pokemon-stats-title {
+    border : solid 2px rgb(0, 92, 0);
+    padding: 5px;
+    padding-left: 10px;
+}
+
+#pokemon-stats-list {
+    padding: 10px;
 }
 </style>
