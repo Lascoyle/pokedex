@@ -79,7 +79,7 @@ export default {
 }
 
 #pokedex-screen-image {
-    background-color:rgb(154, 177, 124);
+    background-color:rgb(177, 199, 149);
     border-radius: 5px;
     width: 80%;
     height: 80%;
@@ -96,7 +96,6 @@ export default {
     padding: 5px;
     border: double 8px rgb(0, 92, 0);
     border-radius: 5px;
-    background: rgb(177, 199, 149);
     font-size: 1.3rem;
 }
 
@@ -126,7 +125,6 @@ export default {
 
 #pokemon-stats {
     font-size: 0.9rem;
-    background:  rgb(177, 199, 149);
     border : solid 2px rgb(0, 92, 0);
 }
 
