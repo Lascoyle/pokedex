@@ -28,5 +28,6 @@ export default {
         align-items: center;
         width: 85vw;
         height: 25vh;
+        margin-top: 20px;
     }
 </style>

@@ -1,8 +1,13 @@
 <template>
     <div id="pokedex-screen">
         <div id="pokedex-screen-frame">
+            <div id="pokedex-screen-frame-style">
+                <div class="pokedex-screen-frame-lines left-lines"></div>
+                <p id="pokedex-screen-frame-text">App made thanks to PokéAPI</p>
+                <div class="pokedex-screen-frame-lines right-lines"></div>
+            </div>
             <div id="pokedex-screen-image">
-                <h1 id="pokemon-identity"><span id="pokemon-name">{{ pokemon.name }}</span> <span id="pokemon-identifier">#{{ pokemon.id }}</span></h1>
+                <h1 id="pokemon-identity"><span id="pokemon-name">{{ pokemon.name.toUpperCase() }}</span> <span id="pokemon-identifier">#{{ pokemon.id }}</span></h1>
                 <div id="pokemon-characteristics">
                     <img id="pokemon-image" :src="sprite" alt="Sprite of current pokemon">
                     <div id="pokemon-characteristics-infos">
@@ -26,7 +31,7 @@
                     <h3 id="pokemon-stats-title">Statistics</h3>
                     <ul id="pokemon-stats-list">
                         <li class="pokemon-stat" v-for="(stat, index) in pokemon.stats" :key="index">
-                            <span class="pokemon-stat-label">{{ stat.stat.name }}:</span>
+                            <span class="pokemon-stat-label">{{ stat.stat.name.toUpperCase() }}:</span>
                             <span class="pokemon-stat-value">{{ stat.base_stat }}</span>
                         </li>
                     </ul>
@@ -65,7 +70,7 @@ export default {
 
 #pokedex-screen {
     width: 90vw;
-    height: 50vh;
+    height: 45vh;
     font-family: 'pokemon', sans-serif;
 }
 
@@ -78,17 +83,43 @@ export default {
     height: inherit;
 }
 
+#pokedex-screen-frame-style {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.pokedex-screen-frame-lines {
+    height: 8px;
+    width: 20px;
+    border-top: pink solid 2px;
+    border-bottom: lightblue solid 2px;
+}
+
+#pokedex-screen-frame-text {
+    font-family: sans-serif;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    color: rgb(120, 122, 131);
+}
+
+.left-lines {
+    width: 40%
+}
+
+.right-lines {
+    width: 10%;
+}
+
 #pokedex-screen-image {
     background-color:rgb(177, 199, 149);
     border-radius: 5px;
-    width: 80%;
-    height: 80%;
+    width: 75%;
+    height: 85%;
     margin: auto;
     margin-top: 10px;
     color: rgb(0, 92, 0);
     overflow-y: scroll;
-    scrollbar-color: rebeccapurple green;
-    scrollbar-width: thin;
 }
 
 #pokemon-identity {
@@ -126,12 +157,14 @@ export default {
 #pokemon-stats {
     font-size: 0.9rem;
     border : solid 2px rgb(0, 92, 0);
+    line-height: 20px;
 }
 
 #pokemon-stats-title {
     border : solid 2px rgb(0, 92, 0);
     padding: 5px;
     padding-left: 10px;
+    text-transform: uppercase;
 }
 
 #pokemon-stats-list {
