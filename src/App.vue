@@ -38,4 +38,8 @@ body {
 ul {
   list-style-type: none;
 }
+
+button:hover {
+  cursor: pointer;
+}
 </style>
