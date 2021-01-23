@@ -141,7 +141,7 @@ export default {
     display: block;
     margin-top: 30px;
     scale: 1.5;
-    filter: grayscale(60%) hue-rotate(200deg);
+    filter: sepia(100%) hue-rotate(50deg);
 }
 
 #pokemon-type {
