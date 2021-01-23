@@ -3,7 +3,7 @@
         <div id="pokedex-title-container">
             <h3 id="pokedex-border"></h3>
         </div>
-        <pokedex-screen></pokedex-screen>
+        <pokedex-screen v-bind:pokemon="pokemon" v-bind:sprite="sprite"></pokedex-screen>
         <pokedex-search></pokedex-search>
         <pokedex-controllers></pokedex-controllers>
         <pokedex-speaker></pokedex-speaker>
@@ -16,6 +16,8 @@ import PokedexScreen from './PokedexScreen.vue'
 import PokedexSearch from './PokedexSearch.vue'
 import PokedexSpeaker from './PokedexSpeaker.vue'
 
+import axios from 'axios'
+
 export default {
     name: 'Pokedex',
     components: {
@@ -25,7 +27,16 @@ export default {
         PokedexSpeaker
     },
     data() {
-        return
+        return {
+            pokemon: {},
+            sprite: ""
+        }
+    },
+
+    mounted() {
+        axios
+        .get('https://pokeapi.co/api/v2/pokemon/150')
+        .then(response =>(this.pokemon = response.data, this.sprite = response.data.sprites.front_default,console.log(this.pokemon, this.sprite)))
     }
 }
 </script>

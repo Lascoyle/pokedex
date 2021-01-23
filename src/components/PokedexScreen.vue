@@ -2,7 +2,8 @@
   <div id="pokedex-screen">
       <div id="pokedex-screen-frame">
           <div id="pokedex-screen-image">
-              
+              <h1>{{ pokemon.name }}</h1>
+              <img :src="sprite" alt="">
           </div>
       </div>
   </div>
@@ -10,7 +11,8 @@
 
 <script>
 export default {
-    name: 'PokedexScreen'
+    name: 'PokedexScreen',
+    props: ['pokemon','sprite']
 }
 </script>
 

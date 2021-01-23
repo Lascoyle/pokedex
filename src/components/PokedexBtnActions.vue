@@ -1,7 +1,7 @@
 <template>
   <div id="pokedex-btn-actions">
-      <btn class="pokedex-btn-action cancel"></btn>
-      <btn class="pokedex-btn-action confirm"></btn>
+      <button class="pokedex-btn-action cancel"></button>
+      <button class="pokedex-btn-action confirm"></button>
   </div>
 </template>
 
