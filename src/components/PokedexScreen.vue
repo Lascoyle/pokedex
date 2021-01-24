@@ -7,36 +7,39 @@
                 <div class="pokedex-screen-frame-lines right-lines"></div>
             </div>
             <div id="pokedex-screen-image">
-                <div id="pokemon-card">
-                    <h1 id="pokemon-identity"><span id="pokemon-name">{{ pokemon.name.toUpperCase() }}</span> <span id="pokemon-identifier">#{{ pokemon.id }}</span></h1>
-                    <div id="pokemon-characteristics">
-                        <img id="pokemon-image" :src="sprite" alt="Sprite of current pokemon">
-                        <div id="pokemon-characteristics-infos">
-                            <div id="pokemon-type">
-                                <p id="pokemon-type-label">Type:</p>
-                                <p id="pokemon-type-value">{{ pokemon.types[0].type.name }}</p>
+                <div id="pokedex-screen-image-content">
+                    <pokedex-search></pokedex-search>
+                    <div id="pokemon-card">
+                        <h1 id="pokemon-identity"><span id="pokemon-name">{{ pokemon.name.toUpperCase() }}</span> <span id="pokemon-identifier">#{{ pokemon.id }}</span></h1>
+                        <div id="pokemon-characteristics">
+                            <img id="pokemon-image" :src="sprite" alt="Sprite of current pokemon">
+                            <div id="pokemon-characteristics-infos">
+                                <div id="pokemon-type">
+                                    <p id="pokemon-type-label">Type:</p>
+                                    <p id="pokemon-type-value">{{ pokemon.types[0].type.name }}</p>
+                                </div>
+                                <ul id="pokemon-scale">
+                                    <li class="pokemon-scale-item">
+                                        <p class="pokemon-scale-item-label">Height:</p>
+                                        <p class="pokemon-scale-item-value">{{ pokemon.height }}</p>
+                                    </li>
+                                    <li class="pokemon-scale-item">
+                                        <p class="pokemon-scale-item-label">Weight:</p>
+                                        <p class="pokemon-scale-item-value">{{ pokemon.weight }}</p>
+                                    </li>
+                                </ul>
                             </div>
-                            <ul id="pokemon-scale">
-                                <li class="pokemon-scale-item">
-                                    <p class="pokemon-scale-item-label">Height:</p>
-                                    <p class="pokemon-scale-item-value">{{ pokemon.height }}</p>
-                                </li>
-                                <li class="pokemon-scale-item">
-                                    <p class="pokemon-scale-item-label">Weight:</p>
-                                    <p class="pokemon-scale-item-value">{{ pokemon.weight }}</p>
-                                </li>
-                            </ul>
                         </div>
                     </div>
-                </div>
-                <div id="pokemon-stats">
-                    <h3 id="pokemon-stats-title">Statistics</h3>
-                    <ul id="pokemon-stats-list">
-                        <li class="pokemon-stat" v-for="(stat, index) in pokemon.stats" :key="index">
-                            <span class="pokemon-stat-label">{{ stat.stat.name.toUpperCase() }}:</span>
-                            <span class="pokemon-stat-value">{{ stat.base_stat }}</span>
-                        </li>
-                    </ul>
+                    <div id="pokemon-stats">
+                        <h3 id="pokemon-stats-title">Statistics</h3>
+                        <ul id="pokemon-stats-list">
+                            <li class="pokemon-stat" v-for="(stat, index) in pokemon.stats" :key="index">
+                                <span class="pokemon-stat-label">{{ stat.stat.name.toUpperCase() }}:</span>
+                                <span class="pokemon-stat-value">{{ stat.base_stat }}</span>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
@@ -44,8 +47,13 @@
 </template>
 
 <script>
+import PokedexSearch from './PokedexSearch.vue'
 export default {
     name: 'PokedexScreen',
+    components: {
+        PokedexSearch
+
+    },
     props :{
         pokemon: {
             type: Object,
@@ -125,8 +133,13 @@ export default {
     overflow-y: scroll;
 }
 
+#pokedex-screen-image-content {
+    height: 100%;
+}
+
 #pokemon-card {
     height: 100%;
+    display: none;
 }
 
 #pokemon-identity {
@@ -166,6 +179,7 @@ export default {
     border : solid 2px rgb(0, 92, 0);
     line-height: 20px;
     height: 100%;
+    display: none;
 }
 
 #pokemon-stats-title {

@@ -29,6 +29,6 @@ export default {
         align-self: center;
         width: 90vw;
         height: 25vh;
-        margin-top: 20px;
+        margin-top: 35px;
     }
 </style>
