@@ -62,15 +62,16 @@ export default {
 <style>
 @font-face {
     font-family: 'gameboy';
-    src: url('../assets/early_gameboy/Early GameBoy.ttf') format('truetype');
+    src: url('../assets/fonts/early_gameboy/Early GameBoy.ttf') format('truetype');
 }
 
 @font-face {
     font-family: 'pokemon';
-    src: url('../assets/pokemon-gb-font/PokemonGb-RAeo.ttf') format('truetype');
+    src: url('../assets/fonts/pokemon-gb-font/PokemonGb-RAeo.ttf') format('truetype');
 }
 
 #pokedex-screen {
+    align-self: center;
     width: 90vw;
     height: 45vh;
     font-family: 'pokemon', sans-serif;

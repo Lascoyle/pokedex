@@ -4,7 +4,8 @@
             <h3 id="pokedex-border"></h3>
         </div>
         <pokedex-screen v-bind:pokemon="pokemon" v-bind:sprite="sprite"></pokedex-screen>
-        <pokedex-search></pokedex-search>
+        <!-- <pokedex-search></pokedex-search> -->
+        <pokedex-signature></pokedex-signature>
         <pokedex-controllers></pokedex-controllers>
         <pokedex-speaker></pokedex-speaker>
     </div>
@@ -13,7 +14,8 @@
 <script>
 import PokedexControllers from './PokedexControllers.vue'
 import PokedexScreen from './PokedexScreen.vue'
-import PokedexSearch from './PokedexSearch.vue'
+// import PokedexSearch from './PokedexSearch.vue'
+import PokedexSignature from './PokedexSignature.vue'
 import PokedexSpeaker from './PokedexSpeaker.vue'
 
 import axios from 'axios'
@@ -22,12 +24,13 @@ export default {
     name: 'Pokedex',
     components: {
         PokedexScreen,
-        PokedexSearch,
+        // PokedexSearch,
+        PokedexSignature,
         PokedexControllers,
         PokedexSpeaker
     },
     data() {
-        return {
+         return {
             pokemon: {},
             sprite: ""
         }
@@ -45,7 +48,6 @@ export default {
     #pokedex {
         display: flex;
         flex-direction: column;
-        align-items: center;
         background: rgb(235, 64, 64);
         min-height: 100vh;
         min-width: 100vw;
