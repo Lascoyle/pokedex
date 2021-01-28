@@ -3,7 +3,7 @@
         <div id="pokedex-title-container">
             <h3 id="pokedex-border"></h3>
         </div>
-        <pokedex-screen v-bind:pokemon="pokemon" v-bind:sprite="sprite"></pokedex-screen>
+        <pokedex-screen></pokedex-screen>
         <pokedex-signature></pokedex-signature>
         <pokedex-controllers></pokedex-controllers>
         <pokedex-speaker></pokedex-speaker>
@@ -16,8 +16,6 @@ import PokedexScreen from './PokedexScreen.vue'
 import PokedexSignature from './PokedexSignature.vue'
 import PokedexSpeaker from './PokedexSpeaker.vue'
 
-import axios from 'axios'
-
 export default {
     name: 'Pokedex',
     components: {
@@ -25,18 +23,6 @@ export default {
         PokedexSignature,
         PokedexControllers,
         PokedexSpeaker
-    },
-    data() {
-         return {
-            pokemon: {},
-            sprite: ""
-        }
-    },
-
-    mounted() {
-        axios
-        .get('https://pokeapi.co/api/v2/pokemon/pikachu')
-        .then(response =>(this.pokemon = response.data, this.sprite = response.data.sprites.front_default))
     }
 }
 </script>

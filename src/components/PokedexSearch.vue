@@ -2,25 +2,31 @@
    <div id="pokedex-search">
         <h2 id="pokedex-search-title">Search A Pokemon</h2>
         <div id="pokedex-search-question-mark">?</div>
-        <form id="pokedex-search-form" action="GET">
+        <div id="pokedex-search-form">
           <input id="pokemon-input" type="text" placeholder="Enter a pokemon..." v-model="pokemonName">
           <div id="keyboard">
-              <span class="keyboard-input" v-for="(letter, index) in alphabetLetters" :key="index" @click="enterLetter(letter)">
-                  {{ letter }}
-              </span>
+              <div id="keyboard-inputs">
+                  <span class="keyboard-input" v-for="(letter, index) in alphabetLetters" :key="index" @click="enterLetter(letter)">
+                      {{ letter }}
+                  </span>
+                  <span class="keyboard-input erase-input" @click="eraseLetter()">🠔</span>
+                  <span class="keyboard-input erase-name" @click="eraseName()">⌫</span>
+                  <button @click="sendPokemonName(pokemonName)">Enter</button>
+              </div>
           </div>
-       </form>
+       </div>
    </div>
 </template>
 
 <script>
+import { bus } from "../main";
 export default {
     name: 'PokedexSearch',
     data() {
         return {
             alphabetLetters: [...'abcdefghijklmnopqrstuvwxyz'],
             pokemonLetters: [],
-            pokemonName: "",
+            pokemonName: ""
         }
     },
 
@@ -28,7 +34,22 @@ export default {
         enterLetter(letter) {
             this.pokemonLetters.push(letter);
             this.pokemonName = this.pokemonLetters.join('');
-            this.pokemonName.toLowerCase()
+            this.pokemonName.toLowerCase();
+        },
+
+        eraseLetter() {
+            this.pokemonLetters.pop();
+            this.pokemonName = this.pokemonLetters.join('');
+        },
+
+        eraseName() {
+            this.pokemonLetters = [];
+            this.pokemonName = "";
+        },
+        sendPokemonName(pokemonName) {
+            bus.$emit("sendPokemonName", pokemonName);
+            let pokedexSearch = document.getElementById('pokedex-search');
+            pokedexSearch.style.display = "none";
         }
     }
 }
@@ -46,7 +67,6 @@ export default {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    background: ;
 }
 
 #pokedex-search-title {
@@ -84,10 +104,15 @@ export default {
     border: solid 3px rgb(0, 92, 0);
     border-radius: 5px;
     font-size: 1.2rem;
+    display: flex;
+    justify-content: center;
 }
-
 .keyboard-input {
     display: inline-block;
     padding: 5px;
+}
+
+.keyboard-input:hover {
+    cursor: pointer;
 }
 </style>
